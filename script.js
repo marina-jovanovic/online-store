@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const tbody = document.querySelector("#artiklitbody");
+    const detaljDiv = document.querySelector(".detalji");
 
     function prikaziArtikle() {
         tbody.innerHTML = "";
@@ -27,6 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>${artikal.naziv}</td>
             <td>${artikal.cijena}</td>
         `;
+            red.addEventListener("click", () => {
+                detaljDiv.innerHTML = `
+                <p>Naizv: ${artikal.naziv}</p>
+                <p>Cijena: ${artikal.cijena}</p>
+                <p>Opis: ${artikal.opis}</p>
+            `;
+            });
+
             tbody.appendChild(red);
         })
     }
