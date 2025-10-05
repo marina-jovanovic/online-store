@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Artikli</h1>
+    <hr>
+
+    <div class="container">
+        <div class="lijevi">
+            <table id="artikli">
+                <thead>
+                    <tr>
+                        <th>Broj</th>
+                        <th>Naziv</th>
+                        <th>Cijena ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Monitor</td>
+                        <td>165</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>TV</td>
+                        <td>650</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Miš</td>
+                        <td>20</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="detalji">
+                <p>Naziv: </p>
+                <p>Cijena: </p>
+                <p>Opis: </p>
+            </div>
+        </div>
+
+
+        <div class="dodajForma">
+            <form id="dodajArtiklForm">
+                <label for="naziv">Naziv:</label>
+                <input type="text" id="naziv" name="naziv" placeholder="Naziv">
+
+                <label for="cijena">Cijena ($):</label>
+                <input type="number" id="cijena" name="cijena" placeholder="Cijena">
+
+                <label for="opis">Opis:</label>
+                <input type="text" id="opis" name="opis" placeholder="Opis">
+
+                <button type="submit">Dodaj</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

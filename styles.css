@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: black;
+    margin: 20px 0;
+}
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+
+.lijevi {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.lijevi table, .lijevi .detalji, .dodajForma {
+    width: 300px;
+    min-height: 200px;
+    box-sizing: border-box;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+th{
+    background-color: lightgray;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.detalji {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+
+form {
+    border: 1px solid black;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 4px 8px;
+    font-size: 14px;
+    align-self: flex-end;
+    margin-left: 20px;
+    cursor: pointer;
+}
