@@ -10,11 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const artikli = [
-        new Artikal(1, "Monitor", 165, "High-performance monitor"),
-        new Artikal(2, "TV", 650, "Latest model TV"),
-        new Artikal(3, "Miš", 20, "Wireless mouse"),
-    ];
+    const artikli = JSON.parse(localStorage.getItem("artikli")) || [];
+
 
     const tbody = document.querySelector("#artiklitbody");
     const detaljDiv = document.querySelector(".detalji");
@@ -55,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const noviArtikal = new Artikal(broj, naziv, cijena, opis);
 
             artikli.push(noviArtikal);
+
+            localStorage.setItem("artikli", JSON.stringify(artikli));
 
             prikaziArtikle();
 
