@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tbody = document.querySelector("#artiklitbody");
     const detaljDiv = document.querySelector(".detalji");
+    const forma = document.querySelector("#dodajArtiklForm");
 
     function prikaziArtikle() {
         tbody.innerHTML = "";
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
             red.addEventListener("click", () => {
                 detaljDiv.innerHTML = `
-                <p>Naizv: ${artikal.naziv}</p>
+                <p>Naziv: ${artikal.naziv}</p>
                 <p>Cijena: ${artikal.cijena}</p>
                 <p>Opis: ${artikal.opis}</p>
             `;
@@ -41,4 +42,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     prikaziArtikle();
+
+    forma.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const naziv = document.querySelector("#naziv").value.trim();
+        const cijena = parseFloat(document.querySelector("#cijena").value);
+        const opis = document.querySelector("#opis").value.trim();
+
+        if (naziv && !isNaN(cijena) && opis) {
+            const broj = artikli.length ? artikli[artikli.length - 1].broj + 1 : 1;
+            const noviArtikal = new Artikal(broj, naziv, cijena, opis);
+
+            artikli.push(noviArtikal);
+
+            prikaziArtikle();
+
+            forma.reset();
+
+        } else {
+            alert("Molimo unesite ispravne podatke za artikl.");
+        }
+    });
 });
